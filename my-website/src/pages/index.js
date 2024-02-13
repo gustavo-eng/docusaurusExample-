@@ -5,9 +5,14 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import Heading from '@theme/Heading';
-import styles from './index.module.css';
+import styles from './index.module.css';  
+import { useState } from 'react';
 
-function HomepageHeader() {
+
+
+
+function HomepageHeader() {  
+  const [titulo, setTitulo] = useState('')
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
@@ -20,7 +25,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            Docusaurus Tutorial - 5min ! ⏱️
           </Link>
         </div>
       </div>
@@ -36,7 +41,9 @@ export default function Home() {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
+        <h1> Page em pages/index.js  </h1>
         <HomepageFeatures />
+        <h1> Features !!  </h1>
       </main>
     </Layout>
   );

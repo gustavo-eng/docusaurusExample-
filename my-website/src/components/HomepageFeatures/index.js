@@ -4,8 +4,13 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'My website',
+    secondParagraph: (
+      <>
+        Docusaurus was designed from the ground up to be Early 
+      </>
+    ),
+    Svg: require('@site/static/img/undraw_undraw_undraw_undraw_undraw_users_per_minute_1e4q_t22j_-1-_0ngf_-1-_27dv_30ul.svg').default,
     description: (
       <>
         Docusaurus was designed from the ground up to be easily installed and
@@ -15,6 +20,11 @@ const FeatureList = [
   },
   {
     title: 'Focus on What Matters',
+    secondParagraph: (
+      <>
+        Docusaurus was designed from the ground up to be Early 
+      </>
+    ),
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
@@ -35,16 +45,19 @@ const FeatureList = [
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({Svg, title, description, secondParagraph}) {
   return (
     <div className={clsx('col col--4')}>
-      <div className="text--center">
+      <div className="text--center"> 
         <Svg className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+        <p> ok {description}</p>
+        <p> ok {secondParagraph}</p>
+        Any card em Feature 
       </div>
+      
     </div>
   );
 }
@@ -52,11 +65,14 @@ function Feature({Svg, title, description}) {
 export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
+      
       <div className="container">
+        Component HomepageFeatures()  em src/components/HomepageFeatures/index.js 
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
+          This is my text
         </div>
       </div>
     </section>
