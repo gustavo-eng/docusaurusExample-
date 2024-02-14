@@ -8,7 +8,11 @@ import Heading from '@theme/Heading';
 import styles from './index.module.css';  
 import { useState } from 'react';
 
-
+/* 
+  -  Neste arquivo eu retiro os dados que estão dentro de docusaurus.config.js 
+  
+  - 
+*/
 
 
 function HomepageHeader() {  
@@ -42,7 +46,14 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <h1> Page em pages/index.js  </h1>
-        <HomepageFeatures />
+        {
+          Array.from({length: 2}).map((_id, index) => {
+            return (
+              <HomepageFeatures />
+
+            ) 
+          })
+        }
         <h1> Features !!  </h1>
       </main>
     </Layout>

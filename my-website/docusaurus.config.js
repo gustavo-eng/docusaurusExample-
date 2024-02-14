@@ -8,7 +8,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
+  title: 'My Site  Translate',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
@@ -31,10 +31,35 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
-  },
-
-  presets: [
+    locales: ['en', 'fr', 'fa', 'it'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        htmlLang: 'en-GB',
+      },
+      // You can omit a locale (e.g. fr) if you don't need to override the defaults
+      fa: {
+        label: 'Italian',
+        direction: 'rtl',
+      },
+      fr: {
+        label: 'Français',
+      }, 
+      it: {
+        label: 'Italiano', 
+      }
+    },
+  }, // Adicionado dia 14/02/2024 - Retirado da documentação  ( https://docusaurus.io/pt-BR/docs/i18n/tutorial ) 
+  plugins: [
+    [
+      require.resolve("@cmfcmf/docusaurus-search-local"),
+      {
+        // Options here // Aqui pode ser adicionado as opções dispostas na documentação ( https://github.com/cmfcmf/docusaurus-search-local?tab=readme-ov-file ) 
+      },
+    ],
+  ],
+  
+  presets: [  
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
@@ -66,7 +91,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'Weg Doc',
         logo: {
           alt: 'My Site Logo',
           src: 'img/weg.png',
@@ -79,6 +104,8 @@ const config = {
             label: 'Tutorial',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/help', label: 'Help', position: 'left'}, // Configurar /help 
+          {type: 'localeDropdown' ,position: 'left'},
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
@@ -90,7 +117,7 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Documentation',
             items: [
               {
                 label: 'Tutorial',
@@ -98,8 +125,9 @@ const config = {
               },
             ],
           },
+          /* // Apenas foi retirado a Comunidade daqui.  
           {
-            title: 'Community',
+            title: 'Community - Comunidade ',
             items: [
               {
                 label: 'Stack Overflow',
@@ -115,6 +143,7 @@ const config = {
               },
             ],
           },
+          */
           {
             title: 'More',
             items: [
@@ -129,7 +158,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright  © ${new Date().getFullYear()} Meu Projeto, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,

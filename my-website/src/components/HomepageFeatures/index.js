@@ -1,6 +1,11 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Translate, {translate} from '@docusaurus/Translate';
+import React from 'react';
+import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
+
 
 const FeatureList = [
   {
@@ -71,10 +76,82 @@ export default function HomepageFeatures() {
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
-          ))}
-          This is my text
+          ))} 
+          
+          <Translate> Welcome to my website </Translate>
+          <Translate> ++  Este é meu texto  ++ </Translate>
+          This is my text 
         </div>
       </div>
     </section>
   );
 }
+/*
+ANTESS 
+import React from 'react';
+import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
+
+export default function Home() {
+  return (
+    <Layout>
+      <h1>Welcome to my website</h1>
+      <main>
+        You can also visit my
+        <Link to="https://docusaurus.io/blog">blog</Link>
+        <img
+          src="/img/home.png"
+          alt="Home icon"
+        />
+      </main>
+    </Layout>
+  );
+}
+
+DEPOISS 
+import React from 'react';
+import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
+
+import Translate, {translate} from '@docusaurus/Translate';
+
+export default function Home() {
+  return (
+    <Layout>
+      <h1>
+        <Translate>Welcome to my website</Translate>
+      </h1>
+      <main>
+        <Translate
+          id="homepage.visitMyBlog"
+          description="The homepage message to ask the user to visit my blog"
+          values={{
+            blogLink: (
+              <Link to="https://docusaurus.io/blog">
+                <Translate
+                  id="homepage.visitMyBlog.linkLabel"
+                  description="The label for the link to my blog">
+                  blog
+                </Translate>
+              </Link>
+            ),
+          }}>
+          {'You can also visit my {blogLink}'}
+        </Translate>
+
+        <img
+          src="/img/home.png"
+          alt={
+            translate({
+              message: 'Home icon',
+              description: 'The homepage icon alt message',
+            })
+          }
+        />
+      </main>
+    </Layout>
+  );
+}
+
+
+*/
