@@ -39,7 +39,6 @@ const config = {
       },
       // You can omit a locale (e.g. fr) if you don't need to override the defaults
       fa: {
-        label: 'Italian',
         direction: 'rtl',
       },
       fr: {
@@ -47,6 +46,7 @@ const config = {
       }, 
       it: {
         label: 'Italiano', 
+        htmlLang: 'it-GB',
       }
     },
   }, // Adicionado dia 14/02/2024 - Retirado da documentação  ( https://docusaurus.io/pt-BR/docs/i18n/tutorial ) 
